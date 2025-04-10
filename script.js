@@ -18,10 +18,11 @@ function drawCard() {
     description.textContent = '';
   }, 100);
   setTimeout(() => {
-    clearInterval(interval);
-    const card = cards[0];
-    img.src = card.image;
-    title.textContent = card.title;
-    description.textContent = card.description;
-  }, 2000);
+  clearInterval(interval);
+  const final = Math.floor(Math.random() * cards.length);
+  const card = cards[final];
+  img.src = card.image;
+  title.textContent = card.title;
+  description.textContent = card.description;
+}, 2000);
 }
