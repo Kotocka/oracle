@@ -7,24 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Манифест (постоянное описание) -->
   <div id="intro">
     <h2>Everything Everywhere All At Once</h2>
     <h3>An Oracle of Chaotic Shifts</h3>
-    <p>This oracle deck is inspired by the surreal multiverse logic of Everything Everywhere All At Once. Each of its 32 cards corresponds to a path or sefirah from the Tree of Life and offers a seemingly absurd, playful, or deeply disorienting action — a ritualized glitch in reality. These actions are designed not to provide answers, but to open portals: to confuse logic, break perception, and slip sideways into parallel possibilities. Pull a card, perform the action, and see which version of yourself arrives on the other side.</p>
+    <p>
+      This oracle deck is inspired by the surreal multiverse logic of Everything Everywhere All At Once. Each of its 32 cards corresponds to a path or sefirah from the Tree of Life and offers a seemingly absurd, playful, or deeply disorienting action — a ritualized glitch in reality. These actions are designed not to provide answers, but to open portals: to confuse logic, break perception, and slip sideways into parallel possibilities. Pull a card, perform the action, and see which version of yourself arrives on the other side.
+    </p>
   </div>
 
+  <!-- Заголовок и кнопка -->
   <h1>Draw a Card</h1>
-  <button id="draw-btn">Draw</button>
+  <button onclick="drawCard()">Draw</button>
 
+  <!-- Контейнер для карты -->
   <div id="card-container">
     <img id="card-image" src="" alt="Oracle Card" style="display:none;" />
     <p id="card-text"></p>
     <p id="card-description"></p>
   </div>
 
+  <!-- Скрипт, ожидающий загрузки DOM, и затем устанавливающий поведение кнопки -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const drawButton = document.getElementById("draw-btn");
+      const drawButton = document.querySelector("button");
 
       const cards = [
         {
